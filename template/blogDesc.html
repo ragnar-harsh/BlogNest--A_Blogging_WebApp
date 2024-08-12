@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogNest | {{curr_blog.blog_title}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/static/css/blogDesc1.css">
+    <link rel="stylesheet" href="/static/css/nav.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    {% include "nav.html" %}
+    <div class="mainContainer">
+        <a href="javascript:history.back()" class="back-btn"><i class="bi bi-arrow-left-square"></i> Go Back</a>
+        <div class="container">
+            <div class="blog-title">{{curr_blog.blog_title | safe}}</div>
+            <p class="author">By {{curr_blog.author_name}}</p>
+            <p class="creation-date">Created on: {{curr_blog.created_at}}</p>
+            <p class="views"><i class="bi bi-eye-fill"></i> Views: {{curr_blog.blog_view_count}} | <i class="bi bi-hand-thumbs-up-fill"></i> Likes: {{curr_blog.blog_likes_count}}</p>
+            <div class="blog-content">
+                <img src="/{{curr_blog.blog_img}}" alt="Blog Image">
+                <p>{{curr_blog.blog_desc | safe}}</p>
+            </div>
+            <div class="button-container">
+            {% comment %} <a href="../" class="back-btn"><i class="bi bi-arrow-left-square"></i> Go Back </a> {% endcomment %}
+                <a href="javascript:history.back()" class="back-btn"><i class="bi bi-arrow-left-square"></i> Go Back </a>
+                <a href="" class="back-btn"><i class="bi bi-hand-thumbs-up-fill"></i> Like </a>
+            </div>
+        </div>
+    </div>
+    
+    {% include "footer.html" %}
+</body>
+</html>

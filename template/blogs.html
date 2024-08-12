@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogNest | All Blogs</title> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/static/css/blog.css">
+    <link rel="stylesheet" href="/static/css/nav.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
+</head>
+<body>
+    {% include "nav.html" %}
+    <div class="slider-container">
+        <div class="slider">
+            {% for blog in top3 %}
+            <div class="slide" style="background-image: url('/{{blog.blog_img}}');">
+                <div class="content">
+                    <h1>{{blog.blog_title}}</h1>
+                    <p>{{blog.blog_desc | safe | slice:":300" }}...... 
+                        <a href="{{blog.title_slug}}" class="read-more-btn"><i class="bi bi-book"></i> Read More</a></p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </div>
+
+    
+    <section class="features-section">
+        <h1 style="color: white;">Top Blogs</h1>
+        <form method="get" class="search-form">
+            <input type="text" name="search" value="" placeholder="Search...">
+            <input type="submit" value="Search">
+        </form>
+
+        <div class="features-container">
+            {% for i in otherBlogs %}
+            <div class="feature-card">
+                <img src="/{{i.blog_img}}" alt="{{i.blog_title}}">
+                <h3>{{i.blog_title}}</h3>
+                <p class="author">By {{i.author_name}}</p>
+                <p class="creation-date">Created on: {{i.created_at}}</p>
+                <p class="views"><i class="bi bi-eye-fill"></i> Views: {{i.blog_view_count}} | <i class="bi bi-hand-thumbs-up-fill"></i> Likes: {{i.blog_likes_count}}</p>
+                <p>{{i.blog_desc | safe | slice:":200" }}......</p>
+                <a href="{{i.title_slug}}" class="read-more-btn"><i class="bi bi-book"></i> Read More</a>
+            </div>
+            {% empty %}
+            No Data Found
+            {% endfor %}
+        </div>
+
+
+        <div class="pagination">
+            {% if otherBlogs.has_previous %}
+            <a href="?page={{otherBlogs.previous_page_number}}" class="prev">&laquo; Previous</a>
+            {% endif %}
+            {% for n in total_pages %}
+            <a href="?page={{n}}" class="page-num">{{n}}</a>
+            {% endfor %}
+            {% if otherBlogs.has_next %}
+            <a href="?page={{otherBlogs.next_page_number}}" class="next">Next &raquo;</a>
+            {% endif %}
+        </div>
+
+    </section>
+
+    {% include "footer.html" %}
+
+    <script src="/static/js/blog.js"></script>
+</body>
+</html>
