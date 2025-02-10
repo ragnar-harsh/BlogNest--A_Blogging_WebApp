@@ -86,4 +86,14 @@ This project is licensed under the MIT License.
 
 ---
 Made with ❤️ using Django.
+![Screenshot 2025-02-11 001548](https://github.com/user-attachments/assets/b0be11cd-137b-4865-956a-487e7994616e)
+![Screenshot 2025-02-11 001121](https://github.com/user-attachments/assets/cce94099-bdc9-45fc-bea6-8b7c49bae6f4)
+![Screenshot 2025-02-11 001208](https://github.com/user-attachments/assets/85f08cdf-d002-49a4-ba5b-2d3388557813)
+![Screenshot 2025-02-11 001230](https://github.com/user-attachments/assets/70ed9863-ccd3-4a2b-a3e4-457ef33bbcbf)
+![Screenshot 2025-02-11 001313](https://github.com/user-attachments/assets/b70469e6-00e7-42cb-b839-8726238eb638)
+![Screenshot 2025-02-11 001339](https://github.com/user-attachments/assets/80d71555-809a-4819-a7f4-7dc9693e6840)
+![Screenshot 2025-02-11 001350](https://github.com/user-attachments/assets/503ef140-e55e-4a4c-a1ea-a15708d342fc)
+![Screenshot 2025-02-11 001426](https://github.com/user-attachments/assets/2d5277e8-e667-4b77-b00b-f84ea032928b)
+![Screenshot 2025-02-11 001447](https://github.com/user-attachments/assets/256754ec-08df-4adc-806a-e5b2ad7022d0)
+
 
